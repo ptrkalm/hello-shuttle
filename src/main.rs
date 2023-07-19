@@ -10,3 +10,9 @@ async fn axum() -> shuttle_axum::ShuttleAxum {
 
     Ok(router.into())
 }
+
+#[tokio::test]
+async fn hello_world_test_get() {
+    let result = hello_world().await;
+    assert_eq!(result, "Hello, Shuttle!");
+}
