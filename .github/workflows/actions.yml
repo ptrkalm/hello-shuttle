@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: taiki-e/install-action@cargo-llvm-cov
-      - run: cargo llvm-cov --all-features --lcov --ignore-file-name-regex main.rs --output-path lcov.info
+      - run: cargo llvm-cov --all-features --lcov --ignore-filename-regex main.rs --output-path lcov.info
       - uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
