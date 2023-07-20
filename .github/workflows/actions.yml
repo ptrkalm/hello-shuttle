@@ -46,6 +46,7 @@ jobs:
           fail_ci_if_error: true
            
   deploy:
+    needs: [check, test, coverage]
     name: Deploy
     runs-on: ubuntu-latest
     steps:
