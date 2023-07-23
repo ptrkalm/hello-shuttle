@@ -51,6 +51,7 @@ jobs:
   deploy:
     needs: [check, test, coverage]
     name: Deploy
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: shuttle-hq/deploy-action@main
